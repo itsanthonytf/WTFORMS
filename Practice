@@ -1,0 +1,115 @@
+CREATE DATABASE adopt;
+
+CREATE TABLE Pet (
+    pet_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    species VARCHAR(50),
+    age INT
+);
+
+CREATE TABLE Pet (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    species TEXT NOT NULL,
+    photo_url TEXT,
+    age INTEGER,
+    notes TEXT,
+    available BOOLEAN DEFAULT TRUE NOT NULL
+);
+ALTER TABLE projects
+ADD DebugToolbar VARCHAR(50);
+
+SELECT 
+    name,
+    CASE
+        WHEN photo IS NOT NULL THEN CONCAT('![Pet Photo](', photo, ')')
+        ELSE ''
+    END AS photo,
+    CASE
+        WHEN available = 1 THEN '**Available**'
+        ELSE ''
+    END AS availability
+FROM pets
+
+CREATE TABLE Pets (
+    PetID INT PRIMARY KEY,
+    PetName VARCHAR(50),
+    Species VARCHAR(50),
+    PhotoURL VARCHAR(255),
+    Age INT,
+    Notes TEXT
+);
+INSERT INTO Pets (PetName, Species, PhotoURL, Age, Notes)
+VALUES ('Fluffy', 'Dog', 'https://example.com/fluffy.jpg', 3, 'Friendly and playful');
+SELECT * FROM Pets;
+
+CREATE PROCEDURE AddPetFormHandler
+AS
+BEGIN
+    -- Add your SQL statements here to handle the form submission for adding a pet
+END
+
+CREATE TABLE Animal (
+    id INT PRIMARY KEY,
+    species VARCHAR(20) CHECK (species IN ('cat', 'dog', 'porcupine')),
+    photo_url VARCHAR(255) CHECK (photo_url ~* '^(http|https)://'),
+    age INT CHECK (age BETWEEN 0 AND 30)
+);
+
+SELECT Name, Species, Photo, Age
+FROM PetInformationPage;
+
+CREATE TABLE pets (
+    pet_id INT PRIMARY KEY,
+    photo_url VARCHAR(255),
+    notes TEXT,
+    available BOOLEAN
+);
+
+CREATE VIEW edit_pet_form AS
+SELECT pet_id, photo_url, notes, available
+FROM pets
+WHERE pet_id = [pet-id-number];
+
+CREATE PROCEDURE HandleEditForm
+AS
+BEGIN
+    -- Validation logic here
+
+    IF {validation_condition} 
+    BEGIN
+        -- Edit the pet logic here
+    END
+    ELSE
+    BEGIN
+        -- Re-render the form logic here
+    END
+END
+
+-- Update function names
+UPDATE functions
+SET function_name = 'show_add_form'
+WHERE function_name = 'bad_function_name';
+
+-- Update variable names
+UPDATE variables
+SET variable_name = 'good_variable_name'
+WHERE variable_name = 'bad_variable_name';
+
+-- Add docstrings to functions
+ALTER TABLE functions
+ADD COLUMN docstring TEXT;
+
+-- Add comments to specific parts
+-- This section calculates the total sales
+SELECT SUM(sales_amount) AS total_sales
+FROM sales_data;
+
+-- Create a file for project requirements
+CREATE TABLE project_requirements (
+    requirement_id SERIAL PRIMARY KEY,
+    requirement TEXT
+);
+
+
+
